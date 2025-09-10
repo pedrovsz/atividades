@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            function calc(){
+                const lado = parseInt(document.getElementById("lado").value);
+                const area = lado*lado;
+                const dobro = area*2;
+
+                alert("A area do seu quadrado é " + area + " e seu dobro é " + dobro + " .");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calcule a área de um quadrado</h1>
+        <h2>Digite o lado:</h2>
+        <input id="lado" placeholder="Lado">
+        <br/><br/>
+        <button onclick="calc()">Calcular</button>
+
+    </body>
+</html>

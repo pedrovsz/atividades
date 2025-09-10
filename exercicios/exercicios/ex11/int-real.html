@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            /*Faça um Programa que peça 2 números inteiros e um número real. Calcule e mostre: o produto do dobro do primeiro com metade do segundo z=2x.y/2. a soma do triplo do primeiro com o terceiro. o terceiro elevado ao cubo.*/
+
+            function calc(){
+            const int1 = parseInt(document.getElementById("int1").value);
+            const int2 = parseInt(document.getElementById("int2").value);
+            const real = parseFloat(document.getElementById("real").value);
+            const prod = (int1*2)*(int2/2);
+            const soma = (int1*3)+real;
+            const elev = real*real*real;
+
+            document.write("o produto do dobro do primeiro com metade do segundo é " + prod + " , a soma do triplo do primeiro com o terceiro é " + soma + " e o terceiro elevado ao cubo é " + elev);
+        }
+        </script>
+    </head>
+    <body>
+        <h1>Calculos</h1>
+        <h2>Digite um número Inteiro:</h2>
+        <input id="int1">
+        <h2>Digite outro número Inteiro:</h2>
+        <input id="int2">
+        <h2>Digite um número Real:</h2>
+        <input id="real">
+        <br><br>
+        <button onclick="calc()">Calcular</button>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+            function calc(){
+                const metros = parseInt(document.getElementById("metros").value);
+                const cent = metros*100;
+                alert("Em centímetros fica " + cent + " centímetros");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Transformar metros em centímetros.</h1>
+        <h2>São quantos metros?</h2>
+        <input id="metros" placeholder="metros">
+        <button onclick="calc()">Calcular</button>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            function media(){
+                const nota1 = parseInt(document.getElementById("nota1").value);
+                const nota2 = parseInt(document.getElementById("nota2").value);
+                const nota3 = parseInt(document.getElementById("nota3").value);
+                const nota4 = parseInt(document.getElementById("nota4").value);
+                const media = ((nota1+nota2+nota3+nota4)/4);
+                alert(media)
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Digite suas notas:</h1>
+        <br/>
+        <h2>primeira nota</h2>
+        <input id="nota1">
+        <br/>
+        <h2>segunda nota</h2>
+        <input id="nota2">
+        <br/>
+        <h2>terceira nota</h2>
+        <input id="nota3">
+        <br/>
+        <h2>quarta nota</h2>
+        <input id="nota4">
+        <br/>
+        <br/>
+        <button onclick="media()">Media</button>
+    </body>
+</html>

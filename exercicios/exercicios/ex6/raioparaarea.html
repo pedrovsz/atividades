@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+            function calc(){
+                const raio = parseInt(document.getElementById("raio").value);
+                const area = 3.14*(raio*raio);
+                alert("A area do raio é " + area);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Indique o raio para descobrir sua area</h1>
+        <h2>Qual o raio?</h2>
+        <input id="raio" placeholder="raio">
+        <button onclick="calc()">Calcular</button>
+    </body>
+</html>
