@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            /*Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Farenheit.*/
+
+            function calc(){
+                const cels = parseFloat(document.getElementById("cels").value);
+                const faren = (cels*1.8)+32;
+
+                document.write("O graus em Farenheit é " + faren + " °F.");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Celsius para Farenheit</h1>
+        <h2>Digite a temperatura em Celsius:</h2>
+        <input id="cels" placeholder="°C">
+        <br><br>
+        <button onclick="calc()">Calcular</button>
+    </body>
+</html>

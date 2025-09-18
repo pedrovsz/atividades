@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            /*Tendo como dados de entrada a altura de uma pessoa, construa um algoritmo que calcule seu peso ideal, usando a seguinte fórmula: (72.7*altura) - 58*/
+            function peso(){
+                const alt = parseFloat(document.getElementById("alt").value);
+
+                const peso = (72.7*alt)-58;
+
+                document.write("O seu peso é de " + peso + " kg.");
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Peso ideal</h1>
+        <h2>Insira sua altura:</h2>
+        <input id="alt" placeholder="usar ponto">
+        <br><br>
+        <button onclick="peso()">Peso</button>
+    </body>
+</html>
