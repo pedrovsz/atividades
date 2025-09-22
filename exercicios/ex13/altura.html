@@ -1,26 +1,50 @@
 <html>
     <head>
         <script>
-            /*Tendo como dado de entrada a altura (h) de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas: Para homens: (72.7h) - 58 Para mulheres: (62.1h) - 44.7*/
+            /* Tendo como dado de entrada a altura (h) de uma pessoa,
+               construa um algoritmo que calcule seu peso ideal
+               Fórmulas:
+               - Homens: (72.7 * h) - 58
+               - Mulheres: (62.1 * h) - 44.7
+            */
+            function peso(){
+                let alt = document.getElementById("alt").value; //criou uma variavel e pegou de onde o dado vira do input
+                alt = alt.replace(",", "."); //altera na escrita ponto por virgula para separação decimal
+                const altura = parseFloat(alt); //altera numero para real
+                const sexo = document.getElementById("sexo").value; //criou variavel que puxa o valor do optio selciona no select
 
-            function conf(){
-                const altura = parseInt(document.getElementById("alt"));
-                
-                function escolhaH{
-                    const valHom = document.getElementById("hom")
-                    
+                if (isNaN(altura) || altura <= 0) { //if que se isNaN(altura) se altura não é número ou altura menor/igual a zero
+                    document.getElementById("resultado").innerText = "Por favor, insira uma altura válida."; //busca o elemento id do paragrafo e coloca o texto
+                    return; //retorna a função original
                 }
+
+                let pesoIdeal = 0; //indicou uma variavel sem valor 
+
+                if (sexo === "homem") { //if para se escolheu option homem
+                    pesoIdeal = (72.7 * altura) - 58; //altera o peso ideal para a formula de altura do homem
+                } else if (sexo === "mulher") { //else if se escolher option mulher
+                    pesoIdeal = (62.1 * altura) - 44.7; //altera o peso ideal para a formula de altura da mulher
+                }
+
+                document.getElementById("resultado").innerText = 
+                    "O seu peso ideal é " + pesoIdeal.toFixed(2) + " kg."; //chama id do paragrafo para colocar um texto que mostra o resultado final
             }
         </script>
     </head>
     <body>
-        <h1>Peso ideal</h1>
-        <h2>Coloque sua altura</h2>
-        <input id="alt">
-        <br><br>
-        <button id="hom" onclick="escolhaH()">homem</button>
-        <button id="mul" onclick="escolhaM()">mulher</button>
-        <br><br>
-        <button onclick="conf()">Confirmar</button>
+        <h1>Peso Ideal</h1>
+        <h2>Insira sua altura e sexo:</h2>
+        
+        <label for="alt">Altura (em metros):</label><br>
+        <input id="alt" placeholder="Ex: 1,75"><br><br>
+        
+        <label for="sexo">Sexo:</label><br>
+        <select id="sexo">
+            <option value="homem">Homem</option>
+            <option value="mulher">Mulher</option>
+        </select><br><br>
+        
+        <button onclick="peso()">Calcular</button>
+        <p id="resultado"></p>
     </body>
 </html>
