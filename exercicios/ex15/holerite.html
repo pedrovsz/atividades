@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+            /*Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês.
+            Calcule e mostre o total do seu salário no referido mês, sabendo-se que são descontados 11% para o Imposto de Renda, 8% para o INSS e 5% para o sindicato, faça um programa que nos dê: salário bruto. quanto pagou ao INSS. quanto pagou ao sindicato. o salário líquido. calcule os descontos e o salário líquido, conforme a tabela abaixo:
+            + Salário Bruto : R$
+            - IR (11%) : R$
+            - INSS (8%) : R$
+            - Sindicato ( 5%) : R$
+            = Salário Liquido : R$
+            Obs.: Salário Bruto - Descontos = Salário Líquido.*/
+
+            function verif() {
+                let porhora = document.getElementById("porhora").value;
+                porhora = porhora.replace(",", ".");
+                const salporhora = parseFloat(porhora);
+                const horas = document.getElementById("horas").value;
+                const bruto = salporhora*horas;
+                const ir = bruto*0.11;
+                const inss = bruto*0.08;
+                const sind = bruto*0.05;
+                const desc = ir+inss+sind;
+                const liqui = bruto-desc;
+
+                if(!salporhora && !horas){
+                    document.getElementById("result").innerText = "Por favor colocar algum valor.";    
+                }
+                document.getElementById("result").innerText = "O seu Salário Bruto é R$" + bruto.toFixed(2) + "; os descontos ficam: IR com R$" + ir.toFixed(2) + ", INSS com R$" + inss.toFixed(2) + " e sindicato com R$" + sind.toFixed(2) + "; ficando com o Salário Líquido de R$" + liqui.toFixed(2) + ".";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Salário</h1>
+        <h2>Quanto você ganha por hora?</h2>
+        <input id="porhora">
+        <br><br>
+        <h2>Quantas horas trabalhou por mês?</h2>
+        <input id="horas">
+        <br><br>
+        <button onclick="verif()">Verificar</button>
+        <p id="result"></p>
+        
+    </body>
+</html>
