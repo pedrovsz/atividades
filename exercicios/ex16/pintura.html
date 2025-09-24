@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            /*Faça um programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada.Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00.Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total.*/
+
+            //1L -> 3m² && lata=18L && 1lata=R$80,00 
+            //Quantidade de latas de tinta && preço total
+            function calc(){
+
+                const metroQuad = document.getElementById("metroquad").value;
+                const litroTinta = metroQuad/3;
+                const lataTinta = litroTinta/18
+                const valorLata = lataTinta*80
+
+                if(!metroQuad){
+                    document.getElementById("resultado").innerText = "Valor não aceitavel!";
+                } 
+
+                document.getElementById("resultado").innerText = "A quantidade de latas de tinta deu " + lataTinta + " latas e o seu valor ficou R$" + valorLata + ".";
+
+
+
+                
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Pintura</h1>
+        <h2>Quantos metros quadrados sera pintado?</h2>
+        <input id="metroquad" placeholder="m²">
+        <button onclick="calc()">Calcular</button>
+        <p id="resultado"></p>
+    </body>
+</html>
